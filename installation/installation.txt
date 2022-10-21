@@ -1,0 +1,9 @@
+ 2004  sudo apt update              ####updates for each outdated package and dependency on your system.
+ 2005  sudo apt install docker.io   ##### install docker
+ 2006  docker --version             ####check the docker version
+ 2007  sudo systemctl status docker #### it shows  Active: active (running) 
+ 2008  sudo docker run hello-world  ####  Hello from Docker!
+                                          This message shows that your installation appears to be working correctly.
+
+ 2009  sudo docker images           #### check the all the images (helloworld images also created)
+ 2010  history
