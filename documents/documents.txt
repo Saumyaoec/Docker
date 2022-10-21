@@ -1,0 +1,45 @@
+
+#what is docker ?
+Ans: So docker is a file and the docker file is a file that contains a list of instructions that docker
+     should follow when creating our image
+# Docker have two stage 
+1. build stage 
+2. run stage 
+
+1. build stage  ###A stage is the creation an image. In a multi-stage build, you go through the process of creating
+more than one image, however you typically only tag a single one (exceptions being multiple builds, building 
+a multi-architecture image manifest with a tool like buildx, and anything else docker releases after this answer).
+
+2.run stage    ###
+
+
+
+
+Docker using django project 
+
+Create a new file name using right click main folder --->>>    Dockerfile
+
+############Dinside ockerfile 
+### syntax=docker/dockerfile:1
+
+FROM python:3
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
+COPY . /code/
+
+##########Create new folder subfolder of main like Dockerfile ---->>docker-compose.yml
+
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python src/profiles_project/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    
