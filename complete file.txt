@@ -1,4 +1,6 @@
-docker file -----
+###link https://www.youtube.com/watch?v=Q7kyVumu1VA
+
+create docker file -----
 
 FROM python:3.6-slim
 RUN mkdir /DjangoCms
